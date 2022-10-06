@@ -1,0 +1,28 @@
+.button{
+border-radius: 5px;
+width: 60px;
+height: 20px;
+color: black;
+font-weight: 500;
+border: 1px solid white;
+}
+.button.accept {
+color: #53d769;    
+background-color: white;
+}
+.accept:hover {
+color: white;    
+border-color: white;
+background-color: #53d769;
+cursor: pointer;
+}
+.button.decline {
+color: #fc3d39;    
+background-color: white;
+}
+.decline:hover {
+color: white;    
+border-color: white;
+background-color: #fc3d39;
+cursor: pointer;
+}
