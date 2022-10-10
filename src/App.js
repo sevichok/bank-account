@@ -11,7 +11,7 @@ const Trasher = styled('div')`
 background:red;
 padding:15px 20px 10px;
 color:white ;
-border:2px solid white;
+border-top:2px solid white;
 position: fixed;
 width:100%;
 left: 0;
@@ -32,6 +32,7 @@ let listLocalStorage = JSON.parse(localStorage.getItem("list"))
 
 const App = () => {
   const [list, setList] = useState(listLocalStorage || initialList)
+
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list))
