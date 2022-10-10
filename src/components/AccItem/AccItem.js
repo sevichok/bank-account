@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import Modal from '../Modal/Modal';
 
 const AccItemWrapper = styled('div')`
-background:#3cb3b9;//#f38181, #ff7575,* #3cb3b9, #6196ea, #ea6161
+background:#3cb3b9;
 padding:5px 10px;
 max-width:1200px;
 border:4px solid white;
@@ -14,7 +14,6 @@ border-radius:5px;
 
  > h6,h5 {
     color:white;
-    margin:0px;
     }
  > .icons {
     padding:5px 10px 0px;
@@ -33,10 +32,8 @@ function AccItem({ id, name, balance, handleDelete, handleTransfer, handleEdit }
     const [endId, setEndID] = useState('');
     const [startName, setStartName] = useState('');
     const [endName, setEndName] = useState('');
-
     const [amount, setAmount] = useState(0);
     const [transfers, setTransfers] = useState(transfersLocalStorage)
-
     const [editModal, setEditModal] = useState(false);
     const [value, setValue] = useState(name);
 
@@ -104,7 +101,8 @@ function AccItem({ id, name, balance, handleDelete, handleTransfer, handleEdit }
     }
 
     return (<>
-        <AccItemWrapper draggable id={id} name={name} balance={balance}
+        <AccItemWrapper draggable
+            id={id} name={name} balance={balance}
             onDragStart={dragStart}
             onDragOver={(e) => e.preventDefault()}
             onDrop={drop}>

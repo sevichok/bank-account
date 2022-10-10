@@ -8,7 +8,7 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import './App.css';
 
 const Trasher = styled('div')`
-background:red;
+background:#ea6161;
 padding:15px 20px 10px;
 color:white ;
 border-top:2px solid white;
@@ -16,7 +16,6 @@ position: fixed;
 width:100%;
 left: 0;
 bottom: 0;
-/* height:150px; */
 h2 {
   margin:0px;
 }
@@ -31,8 +30,8 @@ let initialList = [
 let listLocalStorage = JSON.parse(localStorage.getItem("list"))
 
 const App = () => {
-  const [list, setList] = useState(listLocalStorage || initialList)
 
+  const [list, setList] = useState(listLocalStorage || initialList)
 
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(list))
@@ -77,10 +76,17 @@ const App = () => {
 
   return (
     <div className='App'>
-      <AccForm list={list} handleDelete={handleDelete} onCreate={handleCreate}
-        handleTransfer={handleTransfer} handleEdit={handleEdit} />
+      <AccForm
+        list={list}
+        handleDelete={handleDelete}
+        onCreate={handleCreate}
+        handleTransfer={handleTransfer}
+        handleEdit={handleEdit} />
       <MainForm data={data} />
-      <Trasher draggable onDrop={deleting} onDragOver={(e) => e.preventDefault()}>
+      <Trasher
+        draggable
+        onDrop={deleting}
+        onDragOver={(e) => e.preventDefault()}>
         <FontAwesomeIcon icon={faTrashCan} size="4x" color='white' />
         <h2>Trasher</h2>
       </Trasher>

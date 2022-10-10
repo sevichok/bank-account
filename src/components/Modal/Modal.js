@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Button from '../Button/Button';
 
@@ -23,16 +23,16 @@ const ModalContainer = styled('div')`
     }
 `;
 
-function Modal({ handleClose, handleChange, handleSubmit, changeValue, placeholder, textContent , errorStatus}) {
+function Modal({ handleClose, handleChange, handleSubmit, changeValue, placeholder, textContent , error}) {
 
 
     return (<ModalContainer>
         <h5>{textContent}</h5>
         <input value={changeValue} onChange={handleChange} placeholder={placeholder}></input>
-        {errorStatus && <h6 className='err_msg'>Invalid amount!</h6>}
+        {error && <h6 className='err_msg'>Invalid amount!</h6>}
         <div className='btns'>
-            <Button type="button" outlook="decline" onClick={handleClose} text={"Close"} />
-            <Button type="button" outlook="accept" onClick={handleSubmit} text={"Submit"} disabled={errorStatus} />
+            <Button type="button" outlook="decline" onClick={handleClose} text={"Close"} disabled={false}/>
+            <Button type="button" outlook="accept" onClick={handleSubmit} text={"Submit"} disabled={error} />
         </div>
 
     </ModalContainer>

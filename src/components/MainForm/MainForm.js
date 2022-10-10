@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const MainContainer = styled('div')`
-background-color:#6196ea  ;//"#f38181", "#ff7575", "#3cb3b9", "#6196ea", "#ea6161"
+background-color:#6196ea ;
 color: white ;
 padding:20px 200px;
  > h3 {

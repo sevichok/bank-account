@@ -17,7 +17,7 @@ border:2px solid white;
     display:flex;
     flex-direction:column;
     justify-content:center;
-    background:#f8cc3a;//#3cb3b9,* #6196ea, #bee3f3, #b6d874, #f8cc3a
+    background:#f8cc3a;
     padding:5px 10px;
     cursor:pointer;
     border:4px solid white;
@@ -26,7 +26,6 @@ border:2px solid white;
     > h5 {
     color:white;
     padding-top:4px;
-    margin:0px;
     }
 }
 `;
@@ -39,7 +38,7 @@ function AccForm({ list, onCreate, handleDelete, handleTransfer, handleEdit }) {
     return (<>
         <AccFormWrapper>
             {listItems}
-            {(list.length < 5) && <div className='buttonArea' onClick={onCreate}>
+            {(list.length < 8) && <div className='buttonArea' onClick={onCreate}>
                 <FontAwesomeIcon icon={faFileCirclePlus} size="4x" color='white' />
                 <h5>Add new</h5>
             </div>
